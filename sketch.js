@@ -215,16 +215,3 @@ print(counter)
 }
 
 
-//only goal today is freakin push github, a class that you call in another file that possibly usees an Array. 
-
-//ykwhat, maybe just drop the array, have a little guy walk to where you click and then fall over. 
-
-// when mouseclicked this.postion = mouse x mouse y 
-
-// acceleration == - hella 
-// and you maybe 
-// its like the sun is going on in the back, this is like day to day, like 
-// and like as the accerlation slows, maybe you like the little eyes close or something. 
-// Then open back up and slowly get to the point where it needs to go. 
-
-//just spend till 1:30, 1:45 then do the github shit and submit
