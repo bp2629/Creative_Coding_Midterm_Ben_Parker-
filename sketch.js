@@ -26,6 +26,9 @@ function draw() {
 
   print(counter)
 
+  background(0)
+  maze()
+
   g.update()
 
   g.display();
@@ -43,13 +46,42 @@ function draw() {
 
 }
 
+function maze(){
+  
+  stroke(255)
+  strokeWeight(65)
+
+  line(width/2,0,width/2,height-120)
+  line(width/2,height-120, 65,65)
+  line(65,65,65,height-65)
+  line(65,height-65, width -120, height-32)
+  line(width -120, height-32, width-65, height/2)
+  line( width-65, height/2,width-120, height/2 -60 )
+  stroke(0)
+  strokeWeight(0)
+  
+
+  // beginShape();
+  // vertex(width/2,0);
+  // vertex(width/2,425);
+  // vertex(width/2 -50 ,425);
+  // vertex(width/2 -50 ,0);
+
+
+  // // vertex(,);
+  // // vertex(,);
+  // // vertex(,);
+  // // vertex(,);
+
+
+  // endShape(CLOSE)
+
+}
+
 
 function mousePressed(){
 
   g.moveTo(mouseX,mouseY)
-  
-
-
 
 
 }
