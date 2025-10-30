@@ -4,7 +4,7 @@ class Guy {
     this.y = 0
     this.clickX = this.x
     this.clickY = this.y
-    this.speed = 6; // starter speed.
+    this.speed = 8; // starter speed.
     this.speed_change = 1
     this.color = 0
   }

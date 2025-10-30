@@ -27,11 +27,14 @@ function draw() {
   print(counter)
 
   background(0)
-  maze()
+  //maze()
 
-  g.update()
 
-  g.display();
+  coffee()
+
+  //g.update()
+
+ // g.display();
 
   // sleeping()
   
@@ -43,6 +46,26 @@ function draw() {
   //eyesopen(counter)
   
   //snooze(counter)
+
+
+  ///Coffee, yawn, go to bed, 
+
+}
+
+function coffee(){
+
+  fill(255)
+  ellipse(width/2, height/2+50, width, 400 )
+
+  fill(0)
+  rect(0,50, width, height/2)
+
+  fill(155)
+  rect(width/2-20,0, 40, 80)
+
+
+
+
 
 }
 
@@ -57,6 +80,8 @@ function maze(){
   line(65,height-65, width -120, height-32)
   line(width -120, height-32, width-65, height/2)
   line( width-65, height/2,width-120, height/2 -60 )
+  line(width-120, height/2 -60 , width-170, height/2 -150 )
+  line( width-170, height/2 -150, width, 0 )
   stroke(0)
   strokeWeight(0)
   
