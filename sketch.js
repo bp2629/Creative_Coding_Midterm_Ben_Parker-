@@ -7,8 +7,8 @@ let increment = 20
 let bc = (150)
 
 
-let starsx = newArray(100)
-let starsy = newArray(100)
+let starsx = new Array(100)
+let starsy = new Array(100)
 
 let alarmc = 255
 
@@ -45,6 +45,8 @@ function draw() {
   print(counter)
 
   background(0)
+
+  stars()
 
 
 
@@ -112,8 +114,21 @@ function draw() {
 
 function stars(){
 
+  
 
+  starsx[0] = random(500)
+  starsy[0] = random(500)
+  
 
+  for(let i = 0; i < starsx.length ; i++){ 
+    fill(255-i*10)
+    ellipse(starsx[i], starsy[i], 10, 10);
+}
+
+for(let i = starsx.length - 1;  i > 0; i-- ){
+  starsx[i] = starsx[i-1];
+  starsy[i] = starsy[i-1];
+}
 
 
 }
