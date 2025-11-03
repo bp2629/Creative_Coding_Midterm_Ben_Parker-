@@ -6,9 +6,14 @@ let counter = 0
 let increment = 20
 let bc = (150)
 
+
+let starsx = newArray(100)
+let starsy = newArray(100)
+
 let alarmc = 255
 
 let g;
+
 
 function setup() {
  // put setup code here
@@ -16,7 +21,20 @@ function setup() {
  createCanvas(500,500);
  background(bc); 
  g = new Guy()
+
+ yawn1 = new Yawn(0,0,.5)
+ yawn2 = new Yawn(100,100,.5)
+
+
+
+
+
+
+
+ 
 }
+ 
+
 
 function draw() {
   // put drawing code here
@@ -27,10 +45,21 @@ function draw() {
   print(counter)
 
   background(0)
-  //maze()
 
 
-  coffee()
+
+  // maze()
+
+  // yawn1.update()
+  // yawn1.display()
+
+  // yawn2.update()
+  // yawn2.display()
+
+  
+  
+   
+ // coffee((random(100,275)))
 
   //g.update()
 
@@ -52,10 +81,53 @@ function draw() {
 
 }
 
-function coffee(){
+
+
+// function yawn(counter){
+//   counter += 20
+//  if (counter <200){
+//   fill(255) 
+//   ellipse(width/2,height/2,width,height)
+
+//   fill(0) 
+//   ellipse(width/4,height/4 - (counter/4) +10, 100 , 50 - (counter/4) )
+
+//   fill(0) 
+//   ellipse(3* width/4,height/4  - (counter/4) + 10, 100 , 50 - (counter/4) )
+
+//   // fill(0)
+//   // ellipse(3* width/4,height/4, 100, 50)
+
+//   fill(0)
+//   ellipse(width/2 - 20,height/2 - (counter/4),20,20)
+
+
+//   fill(0)
+//   ellipse(width/2 + 20,height/2 - (counter/4),20,20)
+
+//   fill(0)
+//   ellipse(width/2, 3* height /4, 300,counter)
+//  }
+
+
+function stars(){
+
+
+
+
+
+}
+
+
+
+
+
+
+function coffee(drip){
+
 
   fill(255)
-  ellipse(width/2, height/2+50, width, 400 )
+  ellipse(width/2, height/2+50, width, 400)
 
   fill(0)
   rect(0,50, width, height/2)
@@ -63,9 +135,9 @@ function coffee(){
   fill(155)
   rect(width/2-20,0, 40, 80)
 
-
-
-
+  stroke(0)
+  fill(120, 52, 0)
+  ellipse(width/2,drip,40,40)
 
 }
 
