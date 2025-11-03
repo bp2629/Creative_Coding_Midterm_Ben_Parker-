@@ -3,12 +3,18 @@
 let r = 10
 let c = 0
 let counter = 0
-let increment = 20
 let bc = (150)
+let click = 0
+
+let snooze_counter = 0 
+
+let eyes_counter = 0
+
+let time = 0
 
 
-let starsx = new Array(100)
-let starsy = new Array(100)
+let starsx = new Array(300)
+let starsy = new Array(300)
 
 let alarmc = 255
 
@@ -17,6 +23,8 @@ let g;
 
 function setup() {
  // put setup code here
+
+ frameRate(30)
 
  createCanvas(500,500);
  background(bc); 
@@ -38,83 +46,110 @@ function setup() {
 
 function draw() {
   // put drawing code here
-  background(150)
+  // background(150)
    counter += 1
+
+   time += 1 
 
 
   print(counter)
 
-  background(0)
+  // snooze(counter)
 
-  stars()
+  if (time <= 150){
+
+    sleeping()
+
+  }
+
+  else if (time <= 200 ){
+
+    alarm(counter)
+
+  }
+
+  else if (time <= 300){
+
+    sleeping()
+
+  }
+
+  else if (time <= 350){
+
+    alarm(counter)
+
+  }
+
+
+  else if (time <= 550){
+
+    snooze_counter += 1 
+
+    snooze(snooze_counter)
+
+  }
+
+  else if (time <= 780){
+
+    eyes_counter +=1 
+    eyesopen(eyes_counter)
+
+  }
+
+  else if (time <= 950){
+
+    coffee((random(100,275)))
+
+  }
+
+
+  else if (time <= 1800){
+    
+    maze()
+    g.update()
+    g.display();
+  }
+
+  
+
+  else if (time <= 2500){
+
+    background(0)
+
+    stars()
+  }
+  
 
 
 
+
+  
+
+
+
+
+   //sleeping()
+   //alarm(counter)
+   // sleeping()
+   //alarm(counter)
+   //snooze(counter)
+   //eyesopen(counter)
+   // coffee((random(100,275)))
   // maze()
-
-  // yawn1.update()
+  //g.update()
+ // g.display();
+   // yawn1.update()
   // yawn1.display()
 
   // yawn2.update()
   // yawn2.display()
-
-  
-  
-   
- // coffee((random(100,275)))
-
-  //g.update()
-
- // g.display();
-
-  // sleeping()
-  
-
-
-
-  //alarm(counter)
-
-  //eyesopen(counter)
-  
-  //snooze(counter)
-
-
-  ///Coffee, yawn, go to bed, 
+  // stars()
 
 }
 
-
-
-// function yawn(counter){
-//   counter += 20
-//  if (counter <200){
-//   fill(255) 
-//   ellipse(width/2,height/2,width,height)
-
-//   fill(0) 
-//   ellipse(width/4,height/4 - (counter/4) +10, 100 , 50 - (counter/4) )
-
-//   fill(0) 
-//   ellipse(3* width/4,height/4  - (counter/4) + 10, 100 , 50 - (counter/4) )
-
-//   // fill(0)
-//   // ellipse(3* width/4,height/4, 100, 50)
-
-//   fill(0)
-//   ellipse(width/2 - 20,height/2 - (counter/4),20,20)
-
-
-//   fill(0)
-//   ellipse(width/2 + 20,height/2 - (counter/4),20,20)
-
-//   fill(0)
-//   ellipse(width/2, 3* height /4, 300,counter)
-//  }
-
-
 function stars(){
 
-  
+
 
   starsx[0] = random(500)
   starsy[0] = random(500)
@@ -157,6 +192,7 @@ function coffee(drip){
 }
 
 function maze(){
+  background(0)
   
   stroke(255)
   strokeWeight(65)
@@ -201,18 +237,11 @@ function mousePressed(){
 
 function sleeping(){
 
-  // if (counter == stop){
-  //   increment = 0
-  //   r = 0
-
-
-  // }
-
   fill(c)
   stroke(0)
   ellipse(width/2,height/2, r,r)
 
-  r += increment
+  r += 20
 
   if (r > width * 2){
     
@@ -256,6 +285,7 @@ function alarm(counter){
 
 
 function eyesopen(counter){
+
   counter = counter/ 7
 
   background(0)
@@ -298,6 +328,7 @@ function eyesopen(counter){
 
 
 function snooze(counter){
+  
 
   background(150)
 
