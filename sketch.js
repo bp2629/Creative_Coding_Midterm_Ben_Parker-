@@ -1,9 +1,11 @@
 
 
 let r = 10
-let c = 0
+let sleepr = 0
+let sleepg = 0
+let sleepb = 0
 let counter = 0
-let bc = (150)
+let bc = (26, 0, 41)
 let click = 0
 
 let snooze_counter = 0 
@@ -27,7 +29,7 @@ function setup() {
  frameRate(30)
 
  createCanvas(500,500);
- background(bc); 
+ background(26, 0, 41); 
  g = new Guy()
 
  yawn1 = new Yawn(0,0,.5)
@@ -54,70 +56,72 @@ function draw() {
 
   print(counter)
 
-  // snooze(counter)
-
-  if (time <= 150){
-
-    sleeping()
-
-  }
-
-  else if (time <= 200 ){
-
-    alarm(counter)
-
-  }
-
-  else if (time <= 300){
-
-    sleeping()
-
-  }
-
-  else if (time <= 350){
-
-    alarm(counter)
-
-  }
+  eyesopen(counter)
 
 
-  else if (time <= 550){
 
-    snooze_counter += 1 
+  // if (time <= 150){
 
-    snooze(snooze_counter)
+  //   sleeping()
 
-  }
+  // }
 
-  else if (time <= 780){
+  // else if (time <= 200 ){
 
-    eyes_counter +=1 
-    eyesopen(eyes_counter)
+  //   alarm(counter)
 
-  }
+  // }
 
-  else if (time <= 950){
+  // else if (time <= 300){
 
-    coffee((random(100,275)))
+  //   sleeping()
 
-  }
+  // }
+
+  // else if (time <= 350){
+
+  //   alarm(counter)
+
+  // }
 
 
-  else if (time <= 1800){
+  // else if (time <= 550){
+
+  //   snooze_counter += 1 
+
+  //   snooze(snooze_counter)
+
+  // }
+
+  // else if (time <= 780){
+
+  //   eyes_counter +=1 
+  //   eyesopen(eyes_counter)
+
+  // }
+
+  // else if (time <= 950){
+
+  //   coffee((random(100,275)))
+
+  // }
+
+
+  // else if (time <= 1800){
     
-    maze()
-    g.update()
-    g.display();
-  }
+  //   maze()
+  //   g.update()
+  //   g.display();
+  // }
 
   
 
-  else if (time <= 2500){
+  // else if (time <= 2500){
 
-    background(0)
+  //   background(0)
 
-    stars()
-  }
+  //   stars()
+  // }
   
 
 
@@ -237,7 +241,7 @@ function mousePressed(){
 
 function sleeping(){
 
-  fill(c)
+  fill(sleepr,sleepg,sleepb)
   stroke(0)
   ellipse(width/2,height/2, r,r)
 
@@ -247,12 +251,16 @@ function sleeping(){
     
     r = 10 
     
-    if (c == 0){
-      c = 150
+    if (sleepr == 0){ 
+      sleepr = 26
+      sleepb = 41
+      sleepg = 0
     
     }
     else{
-      c = 0
+      sleepr = 0
+      sleepb = 0
+      sleepg = 0
     }
   }
 
@@ -260,13 +268,7 @@ function sleeping(){
 }
 
 function alarm(counter){
-  // color = color + counter - start
-  // if (counter >= start){
-  //   fill(color,0,0)
-  //   rect(0,0,width,height)
 
-  // }
-  
 
   if (counter % 10 === 0){
     alarmc = 0
@@ -330,7 +332,7 @@ function eyesopen(counter){
 function snooze(counter){
   
 
-  background(150)
+   background(255,0,0)
 
   
 
@@ -338,12 +340,6 @@ function snooze(counter){
   let snooze_b = 179 
   let snooze_g = 0
 
-  
-
-
-
- 
-  
 
   if (counter <= 75){
 
@@ -356,7 +352,7 @@ function snooze(counter){
   
     fill(255, 225, 176)
     stroke(0)
-    rect(-800 + counter * 4,200,800,125,50)
+    rect(-2000 + counter * 20,200,800,125,50)
 
   }
   else if(counter > 75){
@@ -378,7 +374,7 @@ function snooze(counter){
 
      fill(255, 225, 176)
     stroke(1)
-    rect(-200 -counter * 4 ,200,800,125,50)
+    rect(250 -counter * 10  ,200,800,125,50)
 
 
   }
