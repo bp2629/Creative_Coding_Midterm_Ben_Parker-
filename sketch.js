@@ -53,10 +53,12 @@ function draw() {
 
    time += 1 
 
+   
 
   print(counter)
 
-  eyesopen(counter)
+  coffee((random(100,275)))
+
 
 
 
@@ -178,10 +180,18 @@ for(let i = starsx.length - 1;  i > 0; i-- ){
 
 
 function coffee(drip){
+  background(0)
 
 
   fill(255)
-  ellipse(width/2, height/2+50, width, 400)
+  ellipse(width/2, height/2+50, 375, 400)
+  strokeWeight(15)
+  stroke(255)
+  line(375,300,400,300)
+  stroke(0)
+  strokeWeight(0)
+
+  
 
   fill(0)
   rect(0,50, width, height/2)
@@ -313,6 +323,54 @@ function eyesopen(counter){
     pupil = 20
   }
 
+  if (counter>45){
+    open -= (counter-45)*5
+  }
+
+  if (counter>53){
+    open = 40
+  }
+
+  if (counter>60){
+    open -= (counter-60)*5
+  }
+
+  if (counter>68){
+    open = 40
+  }
+
+  if (counter>72){
+    open = 0
+  }
+  if (counter>73){
+    open = 40
+  }
+  if (counter>78){
+    open = 0
+  }
+  if (counter>79){
+    open = 40
+  }
+
+  
+
+
+  // if (counter>55){
+  //   open = 40
+  // }
+
+  // if (counter>65){
+  //   open = 0
+  // }
+  // if (counter>70){
+  //   open = 40
+  // }
+  // if (counter>75){
+  //   open = 0
+  // }
+  // if (counter>80){
+  //   open = 40
+  // }
    
   fill(255, 0, 0, 128)
   ellipse(width/4,width/2,200,open) // left eye
