@@ -57,7 +57,7 @@ function draw() {
 
   print(counter)
 
-  coffee((random(100,275)))
+  coffee((random(5)))
 
 
 
@@ -180,28 +180,59 @@ for(let i = starsx.length - 1;  i > 0; i-- ){
 
 
 function coffee(drip){
-  background(0)
 
+  let pos = 100
 
-  fill(255)
-  ellipse(width/2, height/2+50, 375, 400)
-  strokeWeight(15)
-  stroke(255)
-  line(375,300,400,300)
-  stroke(0)
-  strokeWeight(0)
+ 
 
   
 
-  fill(0)
+ 
+
+  
+
+  background(0)
+
+
+  fill(255) //cup
+  ellipse(width/2, height/2+50, 375, 400)
+
+  
+  strokeWeight(15) //handle
+  stroke(255)
+  line(width-65 ,height-192,width -20,height -192)
+  line(width -20,height -192, width-20 ,height-112,)
+  line(width-20 ,height-112,width-95 ,height-112)
+  stroke(0)
+  strokeWeight(0)
+
+  fill(0) // background to create cup shape. 
   rect(0,50, width, height/2)
 
-  fill(155)
+
+
+
+  
+
+  
+
+
+
+  fill(155) // spout
   rect(width/2-20,0, 40, 80)
+
+  while (pos<350){ //cofee drops
+    pos += random(1)
 
   stroke(0)
   fill(120, 52, 0)
-  ellipse(width/2,drip,40,40)
+  ellipse(width/2,pos,40,40)
+  }
+
+  fill(255) //cover up coffee dribble. 
+  rect(width/2 -50,height/2 +50,100,100)
+
+
 
 }
 
