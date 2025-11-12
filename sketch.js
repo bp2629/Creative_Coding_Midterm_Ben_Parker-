@@ -15,8 +15,8 @@ let eyes_counter = 0
 let time = 0
 
 
-let starsx = new Array(300)
-let starsy = new Array(300)
+let starsx = new Array(30)
+let starsy = new Array(30)
 
 let alarmc = 255
 
@@ -57,8 +57,7 @@ function draw() {
 
   print(counter)
 
-  coffee((random(5)))
-
+  stars()
 
 
 
@@ -155,6 +154,10 @@ function draw() {
 
 function stars(){
 
+  frameRate(5)
+
+  background(0)
+
 
 
   starsx[0] = random(500)
@@ -222,7 +225,7 @@ function coffee(drip){
   rect(width/2-20,0, 40, 80)
 
   while (pos<350){ //cofee drops
-    pos += random(1)
+    pos += random(20)
 
   stroke(0)
   fill(120, 52, 0)
@@ -242,14 +245,14 @@ function maze(){
   stroke(255)
   strokeWeight(65)
 
-  line(width/2,0,width/2,height-120)
+  line(0,height/2,width/2,height-120)
   line(width/2,height-120, 65,65)
   line(65,65,65,height-65)
   line(65,height-65, width -120, height-32)
-  line(width -120, height-32, width-65, height/2)
-  line( width-65, height/2,width-120, height/2 -60 )
-  line(width-120, height/2 -60 , width-170, height/2 -150 )
-  line( width-170, height/2 -150, width, 0 )
+  line(width -120, height-32, width/2 -50, height/2 -200)
+  line( width/ 2 -50, height/2 -200,width-20, height/2 +200 )
+  line(width-20, height/2 +200 , width-70, height/2 )
+  line( width-70, height/2 , height, height/2 )
   stroke(0)
   strokeWeight(0)
   

@@ -1,7 +1,7 @@
 class Guy {
   constructor() {
-    this.x = width / 2
-    this.y = 0
+    this.x = 0
+    this.y = height/2
     this.clickX = this.x
     this.clickY = this.y
     this.speed = 8; // starter speed.
