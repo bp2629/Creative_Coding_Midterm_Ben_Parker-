@@ -18,8 +18,6 @@ function setup() {
 
  g = new Guy()
 
- yawn1 = new Yawn(0,0,.5)
- yawn2 = new Yawn(100,100,.5)
 }
  
 
